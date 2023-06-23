@@ -1,0 +1,48 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string input="";
+    string out="123456789ABCDEFGHIJKLM";
+    string token="";
+    string delimiter=",";
+    cin >> input;
+    string h="";
+    int pos = 0;
+    int i =0;
+    while(input!="quit"){
+        i=-1;
+        h = input[0];
+
+        
+        while(i<24){
+            token = input.substr(0, input.find(delimiter));
+            if(token==""){
+                if(i>23){
+                    break;
+                }
+                input.erase(0, pos + delimiter.length());
+                continue;
+            }
+            if(i>0){
+                cout<< h <<"*"<<out[i-1]<<"," <<token <<endl;
+            }
+            i++;
+            input.erase(0, pos + delimiter.length());
+        }
+        cin >> input;
+    }
+
+    return 0;
+}
