@@ -23,5 +23,5 @@ while True:
                     print("==========="+spamreader[c].split(",")[1])
                     break
                 print("==========="+spamreader[c].split(",")[1])
-    if input("c") != "c":
+    if input("q") != "q":
         break
